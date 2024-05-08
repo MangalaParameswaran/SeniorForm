@@ -15,7 +15,7 @@ const Form = () => {
     const Submitdata=async(e)=>{
         e.preventDefault();  
         try {
-        let res=await axios.post('http://localhost:3000/post', data)
+        let res=await axios.post('https://seniorform.onrender.com/post', data)
         console.log("res", res);
         setEmail('')
         setName('')
