@@ -35,20 +35,18 @@ const addForm = async (req, res) => {
     // console.log("test", test);
     let find = await Formschema.findOne({email:req.body.email})
     // console.log(find);
-    if(!find){
-        let data= await Formschema.create(req.body)
+    if(find){
+      res.status(200).send({
+        success:false,
+        message:`User with ${req.body.email} already exist`
+    })
+    }
+    let data= await Formschema.create(req.body)
         res.status(201).send({
             success:true,
             message:"User Data added succesfully",
             data
         })
-    }
-    else{
-        res.status(400).send({
-            success:false,
-            message:'User already exist'
-        })
-    }
   } catch (error) {
     console.log(`${error}`);
     res.status(500).send({
