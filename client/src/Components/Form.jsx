@@ -34,7 +34,10 @@ const Form = () => {
 
   return (
     <>
-    <form layout='vertical'  onSubmit={Submitdata} >
+    <div className="container">
+      <div className="row">
+        <div className="col-11 col-md-10 col-lg-6 mx-auto">
+        <form layout='vertical'  onSubmit={Submitdata} >
         <label>Name</label>
         <input type='text'  required={true} onChange={(e)=>setName(e.target.value)} />
         <label>Email</label>
@@ -43,6 +46,9 @@ const Form = () => {
         <input type='number'  required={true} onChange={(e)=>setNumber(e.target.value)}/><br/>
         <button type='submit' className='btn btn-primary'>Sumbit</button>
     </form>
+        </div>
+      </div>
+    </div>
     </>
   )
 }
