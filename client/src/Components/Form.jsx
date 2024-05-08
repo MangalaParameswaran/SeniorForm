@@ -40,13 +40,13 @@ const Form = () => {
                 type="text"
                 required={true}
                 onChange={(e) => setName(e.target.value)}
-              />
+              /><br/>
               <label>Email</label>
               <input
                 type="email"
                 required={true}
                 onChange={(e) => setEmail(e.target.value)}
-              />
+              /><br/>
               <label>Phone Number</label>
               <input
                 type="number"
